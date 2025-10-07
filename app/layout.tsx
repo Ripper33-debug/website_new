@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-geist-sans" });
 
 export const metadata: Metadata = {
   title: "Weatherhaven | Global Shelter Solutions",
-  description: "Rapidly deploying shelter systems anywhere in the world. Military, medical, and commercial solutions.",
+  description: "Raaaapidly deploying shelter systems anywhere in the world. Military, medical, and commercial solutions.",
 };
 
 export default function RootLayout({

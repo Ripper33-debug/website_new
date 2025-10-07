@@ -9,21 +9,21 @@ export default function Solutions() {
       title: "Military Solutions",
       description:
         "Tactical shelters and camp systems for defense operations worldwide. Proven on all 7 continents.",
-      image: "/military-bg.jpg",
+      image: "/images/003_weatherhaven-home-military.jpg",
       gradient: "from-primary/80 to-primary-dark/80",
     },
     {
       title: "Medical Solutions",
       description:
         "Field hospitals and mobile clinics meeting WHO standards. Rapid response for critical care.",
-      image: "/medical-bg.jpg",
+      image: "/images/005_weatherhaven-home-medical.jpg",
       gradient: "from-accent/80 to-accent-dark/80",
     },
     {
       title: "Commercial Solutions",
       description:
         "Workforce housing and turnkey camps for mining, construction, and remote operations.",
-      image: "/commercial-bg.jpg",
+      image: "/images/007_weatherhaven-home-commercial.jpg",
       gradient: "from-primary-dark/80 to-accent/80",
     },
   ];
@@ -58,12 +58,15 @@ export default function Solutions() {
               transition={{ duration: 0.6, delay: index * 0.2 }}
               whileHover={{ scale: 1.02 }}
             >
-              {/* Background with gradient overlay */}
+              {/* Background image with gradient overlay */}
+              <img
+                src={solution.image}
+                alt={solution.title}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
               <div
                 className={`absolute inset-0 bg-gradient-to-br ${solution.gradient}`}
-              >
-                <div className="absolute inset-0 bg-secondary/40 backdrop-blur-sm"></div>
-              </div>
+              ></div>
 
               {/* Content */}
               <div className="relative h-full flex flex-col justify-end p-8 z-10">

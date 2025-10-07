@@ -6,17 +6,24 @@ import { ArrowRight, ChevronDown } from "lucide-react";
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-secondary to-background">
-        <div className="absolute inset-0 opacity-30">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img
+          src="/images/011_weatherhaven-home-banner-covidversion.jpg"
+          alt="Weatherhaven Shelter"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/70 to-background/90"></div>
+      </div>
+
+      {/* Animated Background Gradient Overlay */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 opacity-20">
           <div className="absolute top-0 -left-4 w-72 h-72 bg-primary rounded-full mix-blend-multiply filter blur-xl animate-blob"></div>
           <div className="absolute top-0 -right-4 w-72 h-72 bg-accent rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000"></div>
           <div className="absolute -bottom-8 left-20 w-72 h-72 bg-primary-dark rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000"></div>
         </div>
       </div>
-
-      {/* Grid Pattern Overlay */}
-      <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-20"></div>
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
@@ -59,7 +66,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
           >
-            World-class military, medical, and commercial shelter solutions
+            World-sss military, medical, and commercial shelter solutions
             deployed across all 7 continents in the harshest environments.
           </motion.p>
 
