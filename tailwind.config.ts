@@ -9,19 +9,19 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#0a0a0a",
-        foreground: "#ededed",
+        background: "#000000",
+        foreground: "#ffffff",
         primary: {
-          DEFAULT: "#0EA5E9",
-          dark: "#0284C7",
+          DEFAULT: "#dc2626",
+          dark: "#991b1b",
         },
         secondary: {
-          DEFAULT: "#1a1a1a",
-          light: "#2a2a2a",
+          DEFAULT: "#0a0a0a",
+          light: "#1a1a1a",
         },
         accent: {
-          DEFAULT: "#10B981",
-          dark: "#059669",
+          DEFAULT: "#dc2626",
+          dark: "#991b1b",
         },
       },
       fontFamily: {

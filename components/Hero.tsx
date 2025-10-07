@@ -16,14 +16,6 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/70 to-background/90"></div>
       </div>
 
-      {/* Animated Background Gradient Overlay */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 -left-4 w-72 h-72 bg-primary rounded-full mix-blend-multiply filter blur-xl animate-blob"></div>
-          <div className="absolute top-0 -right-4 w-72 h-72 bg-accent rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000"></div>
-          <div className="absolute -bottom-8 left-20 w-72 h-72 bg-primary-dark rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000"></div>
-        </div>
-      </div>
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
@@ -40,33 +32,33 @@ export default function Hero() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <span className="text-primary font-medium">
-              ✦ Trusted by 20+ Militaries Worldwide
+            <span className="text-white font-medium">
+              Trusted by 20+ Militaries Worldwide
             </span>
           </motion.div>
 
           {/* Main Heading */}
           <motion.h1
-            className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight"
+            className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight text-white"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
           >
-            <span className="text-white">Rapidly Deploying</span>
+            Rapidly Deploying
             <br />
-            <span className="gradient-text">Shelter Systems</span>
+            Shelter Systems
             <br />
-            <span className="text-white">Anywhere</span>
+            Anywhere
           </motion.h1>
 
           {/* Subheading */}
           <motion.p
-            className="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto"
+            className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
           >
-            World-sss military, medical, and commercial shelter solutions
+            World-class military, medical, and commercial shelter solutions
             deployed across all 7 continents in the harshest environments.
           </motion.p>
 
@@ -78,9 +70,9 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.9 }}
           >
             <motion.button
-              className="bg-primary text-white px-8 py-4 rounded-full font-medium flex items-center gap-2 group"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              className="bg-white text-black px-8 py-4 rounded font-medium flex items-center gap-2 group hover:bg-gray-100 transition-colors"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
             >
               Explore Solutions
               <ArrowRight
@@ -89,9 +81,9 @@ export default function Hero() {
               />
             </motion.button>
             <motion.button
-              className="glass text-white px-8 py-4 rounded-full font-medium"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              className="border border-white text-white px-8 py-4 rounded font-medium hover:bg-white hover:text-black transition-colors"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
             >
               View Projects
             </motion.button>
@@ -110,10 +102,10 @@ export default function Hero() {
               { value: "7", label: "Continents" },
             ].map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-4xl font-bold text-primary">
+                <div className="text-4xl font-bold text-white">
                   {stat.value}
                 </div>
-                <div className="text-gray-400 mt-1">{stat.label}</div>
+                <div className="text-gray-300 mt-1">{stat.label}</div>
               </div>
             ))}
           </motion.div>
@@ -125,7 +117,7 @@ export default function Hero() {
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
-          <ChevronDown size={32} className="text-gray-500" />
+          <ChevronDown size={32} className="text-white/50" />
         </motion.div>
       </div>
     </section>

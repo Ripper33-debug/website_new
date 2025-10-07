@@ -23,10 +23,10 @@ export default function Stats() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <div className="text-4xl md:text-5xl font-bold text-primary mb-2">
+              <div className="text-4xl md:text-5xl font-bold text-white mb-2">
                 {stat.value}
               </div>
-              <div className="text-gray-400">{stat.label}</div>
+              <div className="text-gray-300">{stat.label}</div>
             </motion.div>
           ))}
         </div>

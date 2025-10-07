@@ -5,31 +5,28 @@ import { ArrowRight } from "lucide-react";
 
 export default function CTA() {
   return (
-    <section className="py-24 bg-secondary relative overflow-hidden">
-      {/* Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 blur-3xl"></div>
-
-      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+    <section className="py-24 bg-secondary">
+      <div className="max-w-4xl mx-auto px-6 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
             Ready to Deploy Your
             <br />
-            <span className="gradient-text">Next Mission?</span>
+            Next Mission?
           </h2>
-          <p className="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">
+          <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
             Let our team of experts help you design and deliver the perfect
             shelter solution for your operation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <motion.button
-              className="bg-primary text-white px-8 py-4 rounded-full font-medium flex items-center gap-2 justify-center group"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              className="bg-white text-black px-8 py-4 rounded font-medium flex items-center gap-2 justify-center group hover:bg-gray-100 transition-colors"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
             >
               Get in Touch
               <ArrowRight
@@ -38,9 +35,9 @@ export default function CTA() {
               />
             </motion.button>
             <motion.button
-              className="glass text-white px-8 py-4 rounded-full font-medium"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              className="border border-white text-white px-8 py-4 rounded font-medium hover:bg-white hover:text-black transition-colors"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
             >
               Download Brochure
             </motion.button>

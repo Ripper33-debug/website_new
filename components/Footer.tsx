@@ -25,11 +25,10 @@ export default function Footer() {
         <div className="grid md:grid-cols-5 gap-8 mb-12">
           {/* Brand */}
           <div className="md:col-span-1">
-            <div className="text-2xl font-bold mb-4">
-              <span className="text-white">Weather</span>
-              <span className="text-primary">haven</span>
+            <div className="text-2xl font-bold mb-4 text-white">
+              Weatherhaven
             </div>
-            <p className="text-gray-400 mb-6">
+            <p className="text-gray-300 mb-6">
               Rapidly deploying shelter systems anywhere in the world since
               1981.
             </p>
@@ -38,7 +37,7 @@ export default function Footer() {
                 <motion.a
                   key={index}
                   href={social.href}
-                  className="text-gray-400 hover:text-primary transition-colors"
+                  className="text-gray-300 hover:text-white transition-colors"
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -51,13 +50,13 @@ export default function Footer() {
           {/* Links */}
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
-              <h3 className="font-bold mb-4">{category}</h3>
+              <h3 className="font-bold mb-4 text-white">{category}</h3>
               <ul className="space-y-2">
                 {links.map((link) => (
                   <li key={link}>
                     <a
                       href="#"
-                      className="text-gray-400 hover:text-primary transition-colors"
+                      className="text-gray-300 hover:text-white transition-colors"
                     >
                       {link}
                     </a>
@@ -70,17 +69,17 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-gray-400 text-sm">
+          <p className="text-gray-300 text-sm">
             © 2025 Weatherhaven Global Resources Ltd. All rights reserved.
           </p>
-          <div className="flex gap-6 text-sm text-gray-400">
-            <a href="#" className="hover:text-primary transition-colors">
+          <div className="flex gap-6 text-sm text-gray-300">
+            <a href="#" className="hover:text-white transition-colors">
               Privacy
             </a>
-            <a href="#" className="hover:text-primary transition-colors">
+            <a href="#" className="hover:text-white transition-colors">
               Terms
             </a>
-            <a href="#" className="hover:text-primary transition-colors">
+            <a href="#" className="hover:text-white transition-colors">
               Cookies
             </a>
           </div>

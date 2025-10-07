@@ -62,10 +62,10 @@ export default function Features() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Why Choose <span className="text-primary">Weatherhaven</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
+            Why Choose Weatherhaven
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-300 text-lg max-w-2xl mx-auto">
             Trusted by militaries, NGOs, and commercial operators worldwide for
             critical shelter solutions
           </p>
@@ -81,15 +81,15 @@ export default function Features() {
           {features.map((feature, index) => (
             <motion.div
               key={index}
-              className="glass p-8 rounded-2xl group hover:border-primary/50 transition-all duration-300"
+              className="glass p-8 rounded-2xl group hover:border-white/20 transition-all duration-300"
               variants={itemVariants}
               whileHover={{ y: -10 }}
             >
-              <div className="text-primary mb-4 group-hover:scale-110 transition-transform duration-300">
+              <div className="text-white mb-4 group-hover:scale-110 transition-transform duration-300">
                 {feature.icon}
               </div>
-              <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
-              <p className="text-gray-400">{feature.description}</p>
+              <h3 className="text-xl font-bold mb-3 text-white">{feature.title}</h3>
+              <p className="text-gray-300">{feature.description}</p>
             </motion.div>
           ))}
         </motion.div>

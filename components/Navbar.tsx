@@ -35,11 +35,10 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
         <motion.div
-          className="text-2xl font-bold"
+          className="text-2xl font-bold text-white"
           whileHover={{ scale: 1.05 }}
         >
-          <span className="text-white">Weather</span>
-          <span className="text-primary">haven</span>
+          Weatherhaven
         </motion.div>
 
         {/* Desktop Navigation */}
@@ -48,7 +47,7 @@ export default function Navbar() {
             <motion.a
               key={link.name}
               href={link.href}
-              className="text-gray-300 hover:text-primary transition-colors duration-200"
+              className="text-gray-300 hover:text-white transition-colors duration-200"
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -56,7 +55,7 @@ export default function Navbar() {
             </motion.a>
           ))}
           <motion.button
-            className="bg-primary text-white px-6 py-2 rounded-full font-medium hover:bg-primary-dark transition-colors duration-200"
+            className="bg-white text-black px-6 py-2 rounded font-medium hover:bg-gray-100 transition-colors duration-200"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -85,13 +84,13 @@ export default function Navbar() {
             <a
               key={link.name}
               href={link.href}
-              className="block py-3 text-gray-300 hover:text-primary transition-colors"
+              className="block py-3 text-gray-300 hover:text-white transition-colors"
               onClick={() => setIsOpen(false)}
             >
               {link.name}
             </a>
           ))}
-          <button className="w-full bg-primary text-white px-6 py-3 rounded-full font-medium mt-4">
+          <button className="w-full bg-white text-black px-6 py-3 rounded font-medium mt-4 hover:bg-gray-100 transition-colors">
             Get Started
           </button>
         </motion.div>
