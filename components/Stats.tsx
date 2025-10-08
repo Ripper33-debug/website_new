@@ -14,10 +14,10 @@ export default function Stats() {
       <div className="max-w-5xl mx-auto px-6 text-center">
         <motion.h2
           className="text-5xl md:text-7xl font-bold text-white mb-20"
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 1, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.2, margin: "100px" }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
         >
           Global Presence
         </motion.h2>
@@ -26,10 +26,14 @@ export default function Stats() {
             <motion.div
               key={index}
               className="text-center"
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.8, delay: index * 0.15, ease: "easeOut" }}
+              viewport={{ once: true, amount: 0.2, margin: "100px" }}
+              transition={{
+                duration: 1.2,
+                delay: index * 0.2,
+                ease: [0.16, 1, 0.3, 1]
+              }}
             >
               <div className="text-6xl md:text-7xl font-bold text-white mb-4">
                 {stat.value}

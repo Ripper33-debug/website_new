@@ -33,10 +33,10 @@ export default function Solutions() {
       <div className="max-w-7xl mx-auto px-6">
         <motion.h2
           className="text-5xl md:text-7xl font-bold text-white mb-20 text-center"
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 1, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.2, margin: "100px" }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
         >
           Solutions
         </motion.h2>
@@ -46,11 +46,19 @@ export default function Solutions() {
             <motion.div
               key={index}
               className="group relative overflow-hidden rounded aspect-[3/4] cursor-pointer"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.8, delay: index * 0.15, ease: "easeOut" }}
-              whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
+              initial={{ opacity: 0, y: 50, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, amount: 0.2, margin: "100px" }}
+              transition={{
+                duration: 1.2,
+                delay: index * 0.2,
+                ease: [0.16, 1, 0.3, 1]
+              }}
+              whileHover={{
+                scale: 1.05,
+                y: -8,
+                transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] }
+              }}
             >
               {/* Background image with dark overlay */}
               <img

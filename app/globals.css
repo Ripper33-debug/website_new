@@ -14,9 +14,9 @@
 }
 
 html {
-  scroll-behavior: smooth;
-  scroll-snap-type: y proximity;
+  scroll-behavior: auto;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 body {
@@ -28,15 +28,19 @@ body {
 }
 
 section {
-  scroll-snap-align: start;
   min-height: 100vh;
-  scroll-padding-top: 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Smoother scroll transitions */
-@media (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth;
+/* Ultra-smooth scroll */
+* {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+@supports (scrollbar-width: thin) {
+  * {
+    scrollbar-width: thin;
   }
 }
 

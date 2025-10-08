@@ -19,37 +19,64 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 text-center flex items-center justify-center h-full">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
-          className="space-y-12"
-        >
+        <div className="space-y-12">
           {/* Main Heading */}
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold text-white">
+          <motion.h1
+            className="text-6xl md:text-8xl lg:text-9xl font-bold text-white"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 1.4,
+              ease: [0.16, 1, 0.3, 1],
+              delay: 0.2
+            }}
+          >
             Weatherhaven
-          </h1>
+          </motion.h1>
 
           {/* Subheading */}
-          <p className="text-2xl md:text-3xl text-gray-400 max-w-3xl mx-auto">
+          <motion.p
+            className="text-2xl md:text-3xl text-gray-400 max-w-3xl mx-auto"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 1.4,
+              ease: [0.16, 1, 0.3, 1],
+              delay: 0.5
+            }}
+          >
             Rapid shelter deployment anywhere
-          </p>
+          </motion.p>
 
           {/* CTA */}
           <motion.button
-            className="bg-white text-black px-10 py-5 rounded font-medium text-lg hover:bg-gray-100 transition-colors"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
+            className="bg-white text-black px-10 py-5 rounded font-medium text-lg hover:bg-gray-100 transition-all duration-500"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 1.4,
+              ease: [0.16, 1, 0.3, 1],
+              delay: 0.8
+            }}
+            whileHover={{ scale: 1.05, transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] } }}
+            whileTap={{ scale: 0.95 }}
           >
             Explore
           </motion.button>
-        </motion.div>
+        </div>
 
         {/* Scroll Indicator */}
         <motion.div
           className="absolute bottom-12 left-1/2 transform -translate-x-1/2"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
+          initial={{ opacity: 0 }}
+          animate={{
+            opacity: 1,
+            y: [0, 12, 0]
+          }}
+          transition={{
+            opacity: { duration: 1, delay: 1.2 },
+            y: { duration: 2.5, repeat: Infinity, ease: "easeInOut" }
+          }}
         >
           <ChevronDown size={40} className="text-white/30" />
         </motion.div>
