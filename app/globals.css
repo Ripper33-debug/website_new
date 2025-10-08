@@ -14,11 +14,15 @@
 }
 
 html {
-  scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
   overflow-x: hidden;
   scroll-padding: 0;
+}
+
+html.smooth-scroll {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
 }
 
 body {
@@ -41,9 +45,9 @@ section {
   -webkit-overflow-scrolling: touch;
 }
 
-/* Smooth scroll behavior */
+/* Custom scroll timing */
 @media (prefers-reduced-motion: no-preference) {
-  html {
+  html.smooth-scroll {
     scroll-behavior: smooth;
   }
 }

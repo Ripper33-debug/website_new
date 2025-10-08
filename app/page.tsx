@@ -9,10 +9,12 @@ import Solutions from "@/components/Solutions";
 import Stats from "@/components/Stats";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
+import SmoothScroll from "@/components/SmoothScroll";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-background">
+      <SmoothScroll />
       <Navbar />
       <Hero />
       <Stats />
