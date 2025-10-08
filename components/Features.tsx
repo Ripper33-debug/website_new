@@ -29,8 +29,8 @@ export default function Features() {
           className="text-5xl md:text-7xl font-bold text-white mb-20 text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 1, ease: "easeOut" }}
         >
           Why Weatherhaven
         </motion.h2>
@@ -42,8 +42,8 @@ export default function Features() {
               className="text-center"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8, delay: index * 0.15, ease: "easeOut" }}
             >
               <div className="text-white mb-6 flex justify-center">
                 {feature.icon}

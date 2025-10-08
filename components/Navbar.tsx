@@ -2,6 +2,7 @@
 
 import { motion, useScroll } from "framer-motion";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 export default function Navbar() {
   const { scrollY } = useScroll();
@@ -14,29 +15,40 @@ export default function Navbar() {
     return () => unsubscribe();
   }, [scrollY]);
 
+  const navLinks = [
+    { name: "Products", href: "/products" },
+    { name: "Military", href: "/military" },
+    { name: "Medical", href: "/medical" },
+    { name: "Innovation", href: "/innovation" },
+  ];
+
   return (
     <motion.nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "glass py-4" : "bg-transparent py-6"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled ? "bg-black/40 backdrop-blur-md py-4" : "bg-transparent py-6"
       }`}
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
-        <div className="text-xl font-bold text-white">
+        <Link href="/" className="text-xl font-bold text-white hover:text-gray-300 transition-colors">
           Weatherhaven
-        </div>
+        </Link>
 
-        {/* Contact Button */}
-        <motion.button
-          className="bg-white text-black px-6 py-2 rounded font-medium hover:bg-gray-100 transition-colors text-sm"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          Contact
-        </motion.button>
+        {/* Navigation Links */}
+        <div className="flex items-center gap-8">
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              href={link.href}
+              className="text-sm text-white/70 hover:text-white transition-colors duration-300"
+            >
+              {link.name}
+            </Link>
+          ))}
+        </div>
       </div>
     </motion.nav>
   );

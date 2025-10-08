@@ -15,7 +15,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: y proximity;
   overflow-y: scroll;
 }
 
@@ -29,8 +29,15 @@ body {
 
 section {
   scroll-snap-align: start;
-  scroll-snap-stop: always;
   min-height: 100vh;
+  scroll-padding-top: 0;
+}
+
+/* Smoother scroll transitions */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 /* Glass morphism effect */

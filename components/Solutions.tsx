@@ -35,8 +35,8 @@ export default function Solutions() {
           className="text-5xl md:text-7xl font-bold text-white mb-20 text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 1, ease: "easeOut" }}
         >
           Solutions
         </motion.h2>
@@ -48,9 +48,9 @@ export default function Solutions() {
               className="group relative overflow-hidden rounded aspect-[3/4] cursor-pointer"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              whileHover={{ scale: 1.03 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8, delay: index * 0.15, ease: "easeOut" }}
+              whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
             >
               {/* Background image with dark overlay */}
               <img
