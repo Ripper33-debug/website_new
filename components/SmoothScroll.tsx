@@ -7,8 +7,11 @@ export default function SmoothScroll() {
     let isScrolling = false;
     let targetSection = 0;
 
-    const easeInOutCubic = (t: number): number => {
-      return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+    // More dramatic easing - speeds up then slows down smoothly
+    const easeInOutQuart = (t: number): number => {
+      return t < 0.5
+        ? 8 * t * t * t * t
+        : 1 - Math.pow(-2 * t + 2, 4) / 2;
     };
 
     const smoothScrollTo = (targetY: number, duration: number) => {
@@ -19,7 +22,7 @@ export default function SmoothScroll() {
       const scroll = (currentTime: number) => {
         const elapsed = currentTime - startTime;
         const progress = Math.min(elapsed / duration, 1);
-        const eased = easeInOutCubic(progress);
+        const eased = easeInOutQuart(progress);
 
         window.scrollTo(0, startY + distance * eased);
 
@@ -42,12 +45,19 @@ export default function SmoothScroll() {
 
       const sections = document.querySelectorAll("section");
       const currentScroll = window.scrollY;
+      const windowHeight = window.innerHeight;
 
-      // Find current section
+      // Find current section - more accurate detection
       let currentIndex = 0;
+      let minDistance = Infinity;
+
       sections.forEach((section, index) => {
         const rect = section.getBoundingClientRect();
-        if (rect.top <= 100) {
+        const distance = Math.abs(rect.top);
+
+        // If this section is closer to the top than previous ones
+        if (distance < minDistance) {
+          minDistance = distance;
           currentIndex = index;
         }
       });
@@ -59,7 +69,7 @@ export default function SmoothScroll() {
         targetSection = currentIndex + 1;
         const target = sections[targetSection];
         if (target) {
-          smoothScrollTo(target.offsetTop, 1000);
+          smoothScrollTo(target.offsetTop, 1800);
         }
       } else if (e.deltaY < 0 && currentIndex > 0) {
         // Scroll up
@@ -67,7 +77,7 @@ export default function SmoothScroll() {
         targetSection = currentIndex - 1;
         const target = sections[targetSection];
         if (target) {
-          smoothScrollTo(target.offsetTop, 1000);
+          smoothScrollTo(target.offsetTop, 1800);
         }
       }
     };
