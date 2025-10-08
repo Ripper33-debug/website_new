@@ -4,29 +4,37 @@ import { motion } from "framer-motion";
 
 export default function Stats() {
   const stats = [
-    { value: "1981", label: "Founded" },
-    { value: "95+", label: "Countries Served" },
-    { value: "20+", label: "Military Partners" },
-    { value: "All 7", label: "Continents" },
+    { value: "95+", label: "Countries" },
+    { value: "40+", label: "Years" },
+    { value: "7", label: "Continents" },
   ];
 
   return (
-    <section className="py-16 bg-secondary-light">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+    <section className="flex items-center justify-center bg-background">
+      <div className="max-w-5xl mx-auto px-6 text-center">
+        <motion.h2
+          className="text-5xl md:text-7xl font-bold text-white mb-20"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          Global Presence
+        </motion.h2>
+        <div className="grid grid-cols-3 gap-16">
           {stats.map((stat, index) => (
             <motion.div
               key={index}
               className="text-center"
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
             >
-              <div className="text-4xl md:text-5xl font-bold text-white mb-2">
+              <div className="text-6xl md:text-7xl font-bold text-white mb-4">
                 {stat.value}
               </div>
-              <div className="text-gray-300">{stat.label}</div>
+              <div className="text-xl text-gray-400">{stat.label}</div>
             </motion.div>
           ))}
         </div>

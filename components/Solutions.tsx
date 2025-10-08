@@ -29,34 +29,28 @@ export default function Solutions() {
   ];
 
   return (
-    <section id="solutions" className="py-24 bg-background">
+    <section id="solutions" className="flex items-center justify-center bg-background">
       <div className="max-w-7xl mx-auto px-6">
-        <motion.div
-          className="text-center mb-16"
+        <motion.h2
+          className="text-5xl md:text-7xl font-bold text-white mb-20 text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
-            Our Solutions
-          </h2>
-          <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-            Comprehensive shelter systems tailored for military, medical, and
-            commercial applications
-          </p>
-        </motion.div>
+          Solutions
+        </motion.h2>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-12">
           {solutions.map((solution, index) => (
             <motion.div
               key={index}
-              className="group relative overflow-hidden rounded-2xl aspect-[4/5]"
+              className="group relative overflow-hidden rounded aspect-[3/4] cursor-pointer"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              whileHover={{ scale: 1.02 }}
+              whileHover={{ scale: 1.03 }}
             >
               {/* Background image with dark overlay */}
               <img
@@ -64,23 +58,12 @@ export default function Solutions() {
                 alt={solution.title}
                 className="absolute inset-0 w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-black/60"></div>
+              <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-all duration-300"></div>
 
               {/* Content */}
-              <div className="relative h-full flex flex-col justify-end p-8 z-10">
-                <h3 className="text-3xl font-bold mb-3 text-white">{solution.title}</h3>
-                <p className="text-gray-300 mb-6">{solution.description}</p>
-                <motion.button
-                  className="flex items-center gap-2 text-white font-medium group-hover:gap-4 transition-all"
-                  whileHover={{ x: 5 }}
-                >
-                  Learn More
-                  <ArrowRight size={20} />
-                </motion.button>
+              <div className="relative h-full flex items-center justify-center p-8 z-10">
+                <h3 className="text-4xl font-bold text-white">{solution.title}</h3>
               </div>
-
-              {/* Hover effect overlay */}
-              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </motion.div>
           ))}
         </div>
